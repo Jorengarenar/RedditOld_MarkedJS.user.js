@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hacker News - comment collapse
 // @description  Collapse comment tree without scrolling to its root (similar as on Reddit New)
-// @version      0.4.0
+// @version      0.5.0
 // @author       Jorengarenar
 // @namespace    https://joren.ga
 // @match        https://news.ycombinator.com/item?id=*
@@ -9,8 +9,17 @@
 // ==/UserScript==
 
 GM_addStyle(`
-  .comment-collapser { position: absolute; width: 5px; margin-left: 5px; margin-top: 7px; }
-  .comment-collapser:hover { background: rgba(0, 0, 0, 0.4);   }
+  .comment-collapser {
+    border-right: 1px dotted white;
+    margin: 7px auto;
+    position: absolute;
+    width: 6px;
+  }
+
+  .comment-collapser:hover {
+    border-width: 3px;
+    width: 5.1px;
+  }
 `);
 
 function countHeight(comments, i) {
@@ -35,24 +44,23 @@ function generateCollapsers() {
   for (let i = 0; i < comments.length; ++i) {
     let div = document.createElement("div");
     div.className = "comment-collapser";
+    div.onclick = collapse;
     div.style = "height: " + (countHeight(comments, i) - 30) + "";
     comments[i].querySelector("td.votelinks").appendChild(div);
   }
 }
 
-window.addEventListener("click", (e) => {
-  if (e.target.matches(".comment-collapser")) {
-    let comment = e.target.closest(".athing.comtr");
-    comment.querySelector(".default .comhead .togg").click();
+function collapse() {
+  let comment = this.closest(".athing.comtr");
+  comment.querySelector(".default .comhead .togg").click();
 
-    let top = comment.getBoundingClientRect().top;
-    if (top < 0) { // if top of comment is out of viewport, scroll to it
-      window.scrollTo(null, window.scrollY + top - 10);
-    }
-
-    generateCollapsers();
+  let top = comment.getBoundingClientRect().top;
+  if (top < 0) { // if top of comment is out of viewport, scroll to it
+    window.scrollTo(null, window.scrollY + top - 10);
   }
-});
+
+  generateCollapsers();
+}
 
 document.querySelectorAll(".athing.comtr .default .comhead .togg").forEach((t) => {
   t.addEventListener("click", generateCollapsers);
