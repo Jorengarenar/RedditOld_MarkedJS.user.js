@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Reddit Old - Comment collapser
 // @description  Collapse comment trees in fashion similar to New Reddit
-// @version      1.0.0
+// @version      1.0.1
 // @author       Jorengarenar
 // @namespace    https://joren.ga
 // @match        https://*.reddit.com/r/*/comments/*
@@ -9,10 +9,11 @@
 // ==/UserScript==
 
 GM_addStyle(`
-  .comment               { position: relative;               }
+  .comment         { position: relative; width: max-content; }
   .comment > .entry      { margin-left: 35px;                }
   .comment > .midcol     { position: absolute; height: 100%; }
   .comment > .child      { border: none;                     }
+  .comment > .child .morecomments     { margin-left: 10px;   }
   .comment.deleted > .midcol          { visibility: visible; }
   .comment.deleted > .midcol > .arrow { visibility: hidden;  }
 
