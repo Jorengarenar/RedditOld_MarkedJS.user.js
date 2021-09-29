@@ -24,7 +24,7 @@ function loaddata(a, b) {
   return val !== null ? val : b;
 }
 
-function setdefault(restoredefault) {
+function setdefault() {
   $.each(defaults, function(name, value) {
     window[name] = loaddata(name, value);
   });
