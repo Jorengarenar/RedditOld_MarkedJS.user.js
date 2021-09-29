@@ -25,7 +25,11 @@
         <td>Collapse comment tree without scrolling to its root</td>
     </tr>
     <tr>
-        <td rowspan=3><a href="https://myanimelist.net">MyAnimeList</a></td>
+        <td rowspan=4><a href="https://myanimelist.net">MyAnimeList</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/MyAnimeList/Auto_History_Remover.user.js">Auto History Remover</a></td>
+        <td>Cleans your MAL history every time you refresh website</td>
     </tr>
     <tr>
         <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/MyAnimeList/Filter_by_status.user.js">Filter by status</a></td>
