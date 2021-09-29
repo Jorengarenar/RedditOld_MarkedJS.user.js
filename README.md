@@ -10,6 +10,11 @@
         <td>Hide anime which isn't on your AniList watching/planning list</td>
     </tr>
     <tr>
+        <td><a href="https://anilist.co">AniList</a></td>
+        <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/AniList/ActivityCleaner.user.js">Activity Cleaner</a></td>
+        <td>Automatically deletes all new list activity entries from your profile</td>
+    </tr>
+    <tr>
         <td><a href="https://github.com">GitHub</a></td>
         <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/GitHub/Search_All_Github_by_default.user.js">Search "All Github" by default</a></td>
         <td>Selects "All GitHub" instead of "In this repository"</td>
