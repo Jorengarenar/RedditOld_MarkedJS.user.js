@@ -8,9 +8,15 @@
         <td><b>DESCRIPTION</b></td>
     </tr>
     <tr>
-        <td><a href="https://anichart.net">AniChart</a></td>
+        <td rowspan=3><a href="https://anichart.net">AniChart</a></td>
+    </tr>
+    <tr>
         <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/AniChart/Auto_import_from_AniList.user.js">Auto import from AniList</a></td>
         <td>Automatically adds anime from Watching/Planning list</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/AniChart/Show_only_from_AniList.user.js">Show only from username's AniList</a></td>
+        <td>Hide anime which isn't on your (or somebody's else) watching/planning list</td>
     </tr>
     <tr>
         <td><a href="https://anilist.co">AniList</a></td>
