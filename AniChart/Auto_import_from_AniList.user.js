@@ -16,7 +16,7 @@ if (Date.now() > (GM_getValue("jwt")?.expires || 0)) {
   if (window.location.hash.length === 0) {
     window.location.replace("https://anilist.co/api/v2/oauth/authorize?client_id=6629&response_type=token");
   } else {
-    let urlSearch = new URLSearchParams(window.location.hash.substring(1));
+    const urlSearch = new URLSearchParams(window.location.hash.substring(1));
     GM_setValue("jwt", {
       token: urlSearch.get("access_token"),
       expires: Date.now() + urlSearch.get("expires_in"),
@@ -44,7 +44,7 @@ let highlights = {};
 function buildQuery(list, color) {
   let query = "";
   list.entries.forEach((entry) => {
-    let id = entry.media.id;
+    const id = entry.media.id;
     if (highlights[id] !== color) {
       query += `
       hi${id} : UpdateAniChartHighlights (highlights: {
@@ -57,7 +57,7 @@ function buildQuery(list, color) {
 }
 
 function mark(lists) {
-  let queryBody = buildQuery(lists[0], "green") + buildQuery(lists[1], "yellow");
+  const queryBody = buildQuery(lists[0], "green") + buildQuery(lists[1], "yellow");
   if (queryBody === "") { return; }
   fetch(url, {
     method: "POST",
