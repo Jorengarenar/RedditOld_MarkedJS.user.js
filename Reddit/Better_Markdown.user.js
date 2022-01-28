@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Markdown for Old Reddit
 // @description  Replace Markdown renderer on Old Reddit with Marked
-// @version      1.1.4
+// @version      1.1.5
 // @author       Jorengarenar
 // @namespace    https://joren.ga
 // @run-at       document-start
@@ -134,7 +134,7 @@ const escHTML = {
   }
 };
 
-marked.use(spoiler, superscript, subreddit, imgPreview, gif, escHTML);
+marked.use({ extensions: [ spoiler, superscript, subreddit, imgPreview, gif, escHTML ] });
 
 
 function recodeHTML(html) {
