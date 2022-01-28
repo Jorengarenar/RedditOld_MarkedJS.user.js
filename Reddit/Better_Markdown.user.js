@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Markdown for Old Reddit
 // @description  Replace Markdown renderer on Old Reddit with Marked
-// @version      1.1.3
+// @version      1.1.4
 // @author       Jorengarenar
 // @namespace    https://joren.ga
 // @run-at       document-start
@@ -134,7 +134,7 @@ const escHTML = {
   }
 };
 
-marked.use({ extensions: [ spoiler, superscript, subreddit, imgPreview, gif, escHTML ] });
+marked.use(spoiler, superscript, subreddit, imgPreview, gif, escHTML);
 
 
 function recodeHTML(html) {
@@ -160,7 +160,8 @@ function genMd(d) {
 }
 
 async function Markdown() {
-  const response = await fetch(window.location.href + ".json");
+  const loc = window.location;
+  const response = await fetch(loc.origin + loc.pathname + ".json" + loc.search);
   const json = await response.json();
   if (json.length) {
     json.forEach(genMd);
