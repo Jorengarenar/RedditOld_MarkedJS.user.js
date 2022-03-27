@@ -92,5 +92,9 @@
       <td>Hide entered giveaways (add-on to <a href="https://github.com/nandee95/Extended_Steamgifts">ESG</a>)</td>
     </tr>
     <tr> <!-- no zebra --> </tr>
+    <tr>
+      <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/SteamGifts/One-Click_Entry.user.js">One-Click Entry</a></td>
+      <td>Adds Enter/Leave button to giveaways without the need of opening their pages</td>
+    </tr>
   </tbody>
 </table>
