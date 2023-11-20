@@ -75,7 +75,7 @@
   <tbody> <!-- Reddit (old) -->
     <tr><td rowspan=0><a href="https://old.reddit.com">Reddit (old)</a></td></tr>
     <tr>
-      <td><a href="https://github.com/Jorengarenar/userscripts/raw/master/Reddit/Better_Markdown.user.js">Better Markdown</a></td>
+      <td><a href="https://github.com/Jorengarenar/RedditOld_Marked.user.js/raw/master/RedditOld_Marked.user.js">Marked for Old Reddit</a></td>
       <td>Replace Markdown renderer on Old Reddit with <a href="https://marked.js.org/">Marked</a></td>
     </tr>
     <tr> <!-- no zebra --> </tr>
